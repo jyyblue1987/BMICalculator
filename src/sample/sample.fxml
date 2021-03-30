@@ -12,7 +12,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="703.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -42,11 +44,25 @@
                   <Font size="30.0" />
                </font>
             </Text>
-            <TextField layoutX="53.0" layoutY="131.0" promptText="Weight(kilograms)" />
-            <TextField layoutX="53.0" layoutY="180.0" promptText="Hieght(centimeters)" />
-            <ChoiceBox layoutX="225.0" layoutY="131.0" prefHeight="25.0" prefWidth="90.0" />
-            <ChoiceBox layoutX="225.0" layoutY="180.0" prefHeight="25.0" prefWidth="90.0" />
-            <Button layoutX="66.0" layoutY="240.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="219.0" text="Calculate" />
+            <TextField fx:id="txtWeight" layoutX="53.0" layoutY="131.0" promptText="Weight(pounds)" />
+            <TextField fx:id="txtHeight" layoutX="53.0" layoutY="180.0" promptText="Hieght(inches)" />
+            <ChoiceBox fx:id="cmbWeight" layoutX="225.0" layoutY="131.0" prefHeight="25.0" prefWidth="90.0" value="pounds">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="pounds" />
+                        <String fx:value="kilos" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+             <ChoiceBox fx:id="cmbHeight" layoutX="225.0" layoutY="180.0" prefHeight="25.0" prefWidth="90.0" value="inches">
+                 <items>
+                     <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="inches" />
+                         <String fx:value="centimeters" />
+                     </FXCollections>
+                 </items>
+             </ChoiceBox>
+            <Button layoutX="66.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#onClickCalculate" prefHeight="25.0" prefWidth="219.0" text="Calculate" />
             <Text layoutX="42.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMI Value">
                <font>
                   <Font size="15.0" />
