@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -25,7 +25,7 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2a324a;">
          <children>
-            <ImageView fitHeight="246.0" fitWidth="321.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgIcon" fitHeight="246.0" fitWidth="321.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@image.png" />
                </image>
@@ -63,22 +63,34 @@
                  </items>
              </ChoiceBox>
             <Button layoutX="66.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#onClickCalculate" prefHeight="25.0" prefWidth="219.0" text="Calculate" />
-            <Text layoutX="42.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMI Value">
+            <Text layoutX="53.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BMI Value">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text layoutX="55.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+            <Text layoutX="66.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text fx:id="txtStatus" layoutX="142.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="175.08252105116844">
+            <Text fx:id="txtStatus" layoutX="142.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="175.08252105116844">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
             <Text fx:id="txtBMI" layoutX="142.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="175.08252215757966">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button layoutX="69.0" layoutY="279.0" mnemonicParsing="false" onMouseClicked="#onClickDiet" prefHeight="25.0" prefWidth="90.0" text="Diet" />
+            <Button layoutX="195.0" layoutY="279.0" mnemonicParsing="false" onMouseClicked="#onClickExcercise" prefHeight="25.0" prefWidth="90.0" text="Exercise" />
+            <Text layoutX="57.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtMessage" layoutX="142.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="175.08252105116844">
                <font>
                   <Font size="15.0" />
                </font>
